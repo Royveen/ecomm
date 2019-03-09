@@ -35,10 +35,10 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 })
 export class CoreDatepickerComponent implements ControlValueAccessor, AfterViewInit, OnChanges {
 
-  @Input('class') inputclass: string;
-  @Input('id') ngId: string;
-  @Input('value') setDate: string;
-  @Input('name') ngName: string;
+  @Input('inputclass') inputclass: string;
+  @Input('ngId') ngId: string;
+  @Input('valueText') setDate: string;
+  @Input('ngName') ngName: string;
   @Input('disabled') disabled: boolean;
   @Input('format') format: string;
   @Input('labelText') label: string;

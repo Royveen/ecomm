@@ -6,9 +6,9 @@
       <app-input-box typeText='password' labelText='Password' idText='password' 
       (valueChange)='setPassword($event)' nameText='password'></app-input-box>
       <app-core-datepicker
-      id="dateID" 
+      ngId="dateID" 
       (valueChange)='setDate($event)' 
-      format='MM-DD-YYYY' name='datename' labelText='Date'>
+      format='MM-DD-YYYY' ngName='datename' labelText='Date'>
     </app-core-datepicker>
       <div class="form-group row">
         <div class="offset-md-4">
