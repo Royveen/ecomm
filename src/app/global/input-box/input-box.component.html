@@ -1,0 +1,11 @@
+<div class='input-box row'>
+  <div class='col-md-4 col-form-label text-md-right'>
+    <label for='{{idText}}' class='{{labelClasses}}'>{{labelText}}</label>
+  </div>
+  <div class='col-md-6 {{inputGroupClass}}'>
+    <input type='{{typeText}}' id='{{idText}}' [attr.disabled]='disabled' value='{{valueText}}'
+    name={{nameText}} class='form-control {{inputClasses}}' 
+    (change)='onChange($event)' autocomplete='{{autocomplete}}'>
+    <span *ngIf='inputGroupClass' class="input-group-addon"><span class="{{groupClasses}}"></span></span>
+  </div>
+</div>

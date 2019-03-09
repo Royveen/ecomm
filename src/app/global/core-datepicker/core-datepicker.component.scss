@@ -1,0 +1,16 @@
+:host {
+    
+    /deep/ app-input-box {
+        .date {
+            .input-group-addon {
+                width: 15%;
+
+                .fas {
+                    width: 100%;
+                    padding: 9px;
+                    background: #ccc;
+                }
+            }
+        }
+    }
+}

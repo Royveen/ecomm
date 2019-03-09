@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "ecomm",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -27,9 +27,20 @@
               "src/assets"
             ],
             "styles": [
+              "src/app/global/bootstrap-4.2.1-dist/css/bootstrap.min.css",
+              "./node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css",
+              "./node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+              "./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+                "src/app/global/jquery.js",
+                "src/app/global/bootstrap-4.2.1-dist/js/bootstrap.min.js",
+                "./node_modules/moment/min/moment-with-locales.min.js",
+                "./node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js",
+                "./node_modules/owl.carousel/dist/owl.carousel.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -102,6 +113,38 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/EComm-client-server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "EComm-client:build",
+            "serverTarget": "EComm-client:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "EComm-client:build:production",
+              "serverTarget": "EComm-client:server:production"
+            }
           }
         }
       }

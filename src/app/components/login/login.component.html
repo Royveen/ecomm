@@ -1,0 +1,29 @@
+<div class="login-form">
+  <div class="login-body">
+    <form action="" method="">
+      <app-input-box typeText='email' labelText='Email' idText='email' 
+      nameText='email' autocomplete="off" (valueChange)='setEmail($event)'></app-input-box>
+      <app-input-box typeText='password' labelText='Password' idText='password' 
+      (valueChange)='setPassword($event)' nameText='password'></app-input-box>
+      <app-core-datepicker
+      id="dateID" 
+      (valueChange)='setDate($event)' 
+      format='MM-DD-YYYY' name='datename' labelText='Date'>
+    </app-core-datepicker>
+      <div class="form-group row">
+        <div class="offset-md-4">
+          <app-core-checkbox labelText='Remember me' (valueChange)='setRemember($event)' idText='remember' nameText='remember'></app-core-checkbox>
+        </div>
+      </div>
+      <div class="offset-md-4">
+        <app-core-button typeText='button' btnClasses='btn btn-primary btn-small' (btnClick)='loginSubmit()' >login</app-core-button>
+        <!-- <button type="submit" class="btn btn-primary">
+          Login
+        </button> -->
+        <a href="#" class="btn btn-link">
+          Forgot Your Password?
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
